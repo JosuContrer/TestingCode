@@ -1,5 +1,6 @@
 #include <Arduino.h>
-//#include <TimerOne.h>
+#include <TimerOne.h>
+#include <UltraSonicSensor.h>
 
 /*
 * Ultrasonic Sensor HC-SR04 and Arduino Tutorial
@@ -9,37 +10,21 @@
 *
 */
 // defines pins numbers
+// UltraSonicSensor variables:
 const int trigPin = 9;
 const int echoPin = 10;
-// defines variables
-long duration;
-int distance;
+UltraSonicSensor uSensor;
+
 
 void setup() {
+  Timer1.initialize(2000000);
   pinMode(trigPin, OUTPUT); // Sets the trigPin as an Output
   pinMode(echoPin, INPUT); // Sets the echoPin as an Input
   Serial.begin(9600); // Starts the serial communication
 }
 
 void loop() {
-  // Clears the trigPin
-  digitalWrite(trigPin, LOW);
-  delayMicroseconds(2);
 
-  // Sets the trigPin on HIGH state for 10 micro seconds
-  digitalWrite(trigPin, HIGH);
-  delayMicroseconds(10);
-  digitalWrite(trigPin, LOW);
+uSensor.distanceFromWall(trigPin,echoPin);
 
-  // Reads the echoPin, returns the sound wave travel time in microseconds
-  duration = pulseIn(echoPin, HIGH);
-
-  // Calculating the distance
-  distance= duration*0.034/2;
-
-  // Prints the distance on the Serial Monitor
-  Serial.print(distance);
-  Serial.print("|");
-  // delay(400);
-  //Serial.println(distance);
 }
