@@ -1,8 +1,7 @@
 #include "UltraSonicSensor.h"
 #include <Arduino.h>
-//Constructor????
+//Constructor
 UltraSonicSensor::UltraSonicSensor(){}
-
 
 //Method that gives return disatnce from the wall as an in
 int UltraSonicSensor::distanceFromWall(int trigPin, int echoPin){
