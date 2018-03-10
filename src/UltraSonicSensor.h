@@ -10,13 +10,12 @@
 class UltraSonicSensor{
 public:
   UltraSonicSensor();
-  int distanceFromWall(int trigPin, int echoPin);
+  int distanceFromWall(int, int);
 
 private:
   // defines variables
   long duration;
   int distance;
-
 
 };
 

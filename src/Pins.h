@@ -4,12 +4,15 @@
 #include <Arduino.h>
 
 //------------UltraSonicSensor----------
-#define RIGHTTRIGGERPIN 9
-#define RIGHTECHOPIN 10
+#define RIGHTTRIGGERPIN 6
+#define RIGHTECHOPIN 5
 
-#define LEFTTRIGGERPIN 11
-#define LEFTECHOPIN 12
+#define LEFTTRIGGERPIN 10
+#define LEFTECHOPIN 9
 
+//----------------LEDs------------------
+#define RIGHTLEDPIN 2
+#define LEFTLEDPIN 3
 
 //---------------------------------------
 #endif
